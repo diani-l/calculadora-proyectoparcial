@@ -1,0 +1,63 @@
+
+    // Temperatura
+    function convertirTemp(tipo) {
+      let valor = parseFloat(document.getElementById("resultado").value);
+      if (isNaN(valor)) return alert("Ingrese un número válido");
+
+      if (tipo === "C") {
+        alert(((valor - 32) * 5 / 9).toFixed(2) + " °C");
+      } else if (tipo === "F") {
+        alert(((valor * 9 / 5) + 32).toFixed(2) + " °F");
+      } else if (tipo === "K") {
+        alert((valor + 273.15).toFixed(2) + " K");
+      }
+    }
+
+    // Peso
+    function convertirPeso(tipo) {
+      let valor = parseFloat(document.getElementById("resultado").value);
+      if (isNaN(valor)) return alert("Ingrese un número válido");
+
+      if (tipo === "kg") {
+        alert(valor + " kg");
+      } else if (tipo === "g") {
+        alert((valor * 1000).toFixed(2) + " g");
+      } else if (tipo === "lb") {
+        alert((valor * 2.20462).toFixed(2) + " lb");
+      }
+    }
+
+    // Tiempo
+    function convertirTiempo(tipo) {
+      let valor = parseInt(document.getElementById("resultado").value);
+      if (isNaN(valor)) return alert("Ingrese un número válido");
+
+      if (tipo === "HMS") {
+        let horas = Math.floor(valor / 3600);
+        let minutos = Math.floor((valor % 3600) / 60);
+        let segundos = valor % 60;
+        alert(`${horas}h : ${minutos}m : ${segundos}s`);
+      } else if (tipo === "DMA") {
+        let dias = valor;
+        let meses = Math.floor(dias / 30);
+        let años = Math.floor(dias / 365);
+        alert(`${dias} días, ${meses} meses, ${años} años`);
+      }
+    }
+
+    // Moneda (ejemplo con tasas fijas)
+    function convertirMoneda(tipo) {
+      let valor = parseFloat(document.getElementById("resultado").value);
+      if (isNaN(valor)) return alert("Ingrese un número válido");
+
+      if (tipo === "USD") {
+        alert(valor.toFixed(2) + " USD");
+      } else if (tipo === "COP") {
+        alert((valor * 4000).toFixed(2) + " COP");
+      } else if (tipo === "EUR") {
+        alert((valor * 0.9).toFixed(2) + " EUR");
+      }
+    }
+  </script>
+</body>
+</html>
